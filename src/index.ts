@@ -3,13 +3,7 @@ export interface Passcode {
   code: string;
   expiredAt: Date;
 }
-export interface CodeRepository {
-  save(id: string, passcode: string, expireAt: Date): Promise<number>;
-  load(id: string): Promise<Passcode>;
-  delete(id: string): Promise<number>;
-}
-export type PasscodeRepository = CodeRepository;
-export class MongoCodeRepository<ID> {
+export class CodeRepository<ID> {
   constructor(public collection: Collection, expiredAt?: string, passcode?: string) {
     this.code = (passcode ? passcode : 'passcode');
     this.expiredAt = (expiredAt ? expiredAt : 'expiredAt');
@@ -60,7 +54,13 @@ export class MongoCodeRepository<ID> {
     }));
   }
 }
-export const MongoPasscodeRepository = MongoCodeRepository;
+export const PasscodeRepository = CodeRepository;
+export const MongoPasscodeRepository = CodeRepository;
+export const MongoCodeRepository = CodeRepository;
+export const CodeService = CodeRepository;
+export const PasscodeService = CodeRepository;
+export const MongoPasscodeService = CodeRepository;
+export const MongoCodeService = CodeRepository;
 export function getAffectedRow(res: any): number {
   return res.lastErrorObject ? res.lastErrorObject.n : (res.ok ? res.ok : 0);
 }
