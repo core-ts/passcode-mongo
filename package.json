@@ -1,0 +1,27 @@
+{
+  "name": "passcode-mongo",
+  "version": "0.0.1",
+  "description": "passcode-mongo",
+  "main": "./lib/index.js",
+  "types": "./src/index.ts",
+  "scripts": {
+    "build:lib": "tsc",
+    "clean:lib": "rimraf lib"
+  },
+  "devDependencies": {
+    "@types/mongodb": "^3.6.17",
+    "mongodb": "^3.7.3",
+    "tslint": "5.10.0",
+    "typescript": "^3.3.3333"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/core-ts/passcode-mongo"
+  },
+  "keywords": [
+    "passcode-mongo"
+  ]
+}
