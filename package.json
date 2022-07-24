@@ -1,6 +1,6 @@
 {
   "name": "passcode-mongo",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "passcode-mongo",
   "main": "./lib/index.js",
   "types": "./src/index.ts",

@@ -32,7 +32,7 @@ export class CodeRepository<ID> {
       });
     }));
   }
-  load(id: ID): Promise<Passcode> {
+  load(id: ID): Promise<Passcode|undefined|null> {
     const query = {_id: id};
     return new Promise<Passcode>((resolve, reject) => {
       this.collection.findOne(query, (err: any, item: any) => {
